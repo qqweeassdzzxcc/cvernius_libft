@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/12 23:01:03 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/15 19:35:07 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
 	int		i;
+	char	sym;
+	char	*str;
 
-	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
+	str = (char *)s;
+	sym = (char)c;
+	i = ft_strlen(s);
+	while (i >= 0 && str[i] != sym)
+		i--;
+	if (sym == '\0')
+		return (&str[ft_strlen(s)]);
+	if (sym == str[i])
+		return (&str[i]);
 	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+		return (NULL);
 }

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/12 21:36:34 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/15 19:29:13 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char	*str;
-	int		i;
+	size_t i;
 
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
+	while (src[i] != '\0' && i < len)
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		dst[i] = src[i];
+		i++;
 	}
+	dst[i] = '\0';
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

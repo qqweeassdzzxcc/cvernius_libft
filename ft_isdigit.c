@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/23 19:49:57 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/23 19:49:59 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+int		ft_isdigit(int ch)
 {
-	char	*str;
-	int		i;
-
-	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+	return (((char)ch >= '0' && (char)ch <= '9') ? 1 : 0);
 }

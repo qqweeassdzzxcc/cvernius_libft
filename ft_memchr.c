@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/12 20:32:35 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/15 19:28:23 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
-	int		i;
+	unsigned char	*str;
+	unsigned char	sym;
+	size_t			i;
 
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
+	sym = (unsigned char)c;
+	str = (unsigned char *)s;
+	while (str[i] != '\0' && i < n && str[i] != sym)
+		i++;
+	if (str[i] != sym)
 		return (NULL);
 	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+		return (&str[i]);
 }

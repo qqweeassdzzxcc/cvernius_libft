@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/12 22:07:12 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/15 19:29:09 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char	*str;
-	int		i;
+	size_t i;
+	size_t j;
 
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
+	j = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0' && j < n)
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		s1[i] = s2[j];
+		i++;
+		j++;
 	}
+	s1[i] = '\0';
+	return (s1);
 }

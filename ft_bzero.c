@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/09 19:37:11 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/23 20:35:23 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
-	int		i;
+	size_t	i;
 
-	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
+	if (n != 0)
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		str = (char *)s;
+		i = 0;
+		while (i != n)
+		{
+			str[i] = '\0';
+			i++;
+		}
 	}
 }

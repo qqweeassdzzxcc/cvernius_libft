@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/16 20:54:59 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/16 21:11:38 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+//#include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	char	*str;
-	int		i;
+	int i;
 
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+	while ((unsigned char)s1[i] == (unsigned char)s2[i] && s1[i] != '\0'
+			&& s2[i] != '\0')
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

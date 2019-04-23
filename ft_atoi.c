@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/16 21:19:10 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/16 22:09:41 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+int		ft_atoi(const char *str)
 {
-	char	*str;
-	int		i;
+	int total;
+	int i;
+	int flag;
 
+	total = 0;
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
+	while ((str[i] != '\0') && (str[i] == '\n' || str[i] == '\t'
+			|| str[i] == '\r' || str[i] == '\f' || str[i] == ' '))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		if (str[i] == '-')
+			flag = -1;
+		i++;
 	}
+	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	{
+		total = total * 10 + (str[i] - 48);
+		i++;
+	}
+	if (flag == -1)
+		total = total * -1;
+	return (total);
 }

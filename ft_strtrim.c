@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/23 20:56:32 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/23 20:56:33 by cvernius         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //#include "ft_header.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +27,7 @@ static int	ft_strlen(char *s)
 char	*ft_strtrim(char const *s)
 {
 	int		i;
-	int 	j;
+	int		j;
 	int		k;
 	char	*str;
 

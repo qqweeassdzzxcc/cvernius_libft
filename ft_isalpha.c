@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/23 19:49:15 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/23 19:49:41 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+int		ft_isalpha(int ch)
 {
-	char	*str;
-	int		i;
-
-	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+	return (((char)ch >= 'a' && (char)ch <= 'z') ||
+								((char)ch >= 'A' && (char)ch <= 'Z') ? 1 : 0);
 }

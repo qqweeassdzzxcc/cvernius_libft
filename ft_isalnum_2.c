@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_isalnum_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/23 19:51:43 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/23 19:52:06 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+int		ft_isalnum(int ch)
 {
-	char	*str;
-	int		i;
-
-	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+	return ((((char)ch >= 'a' && (char)ch <= 'z') ||
+						((char)ch >= 'A' && (char)ch <= 'Z') ||
+								((char)ch >= '0' && (char)ch <= '9')) ? 1 : 0);
 }

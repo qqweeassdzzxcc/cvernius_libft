@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/06 23:16:46 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/15 19:28:41 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_memset(void *b, int c, size_t len)
 {
+	size_t	i;
 	char	*str;
-	int		i;
 
+	str = b;
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
+	while (str[i] != '\0' && i < len)
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		str[i] = (unsigned char)c;
+		i++;
 	}
+	return (str);
 }

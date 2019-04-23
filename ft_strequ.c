@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/23 20:55:12 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/23 20:55:13 by cvernius         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_header.h"
 
 int		ft_strequ(char const *s1, char const *s2)
@@ -5,10 +17,10 @@ int		ft_strequ(char const *s1, char const *s2)
 	int i;
 
 	i = 0;
-	while (s[i] !='\0' && s2[i] != '\0' && s1[i] == s2[i])
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
 		i++;
 	if (s1[i] == '\0' && s2[i] == '\0')
 		return (1);
-		else
-	return (0);		
+	else
+	return (0);
 }

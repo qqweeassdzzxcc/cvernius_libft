@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/12 20:44:57 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/15 19:28:27 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*str;
-	int		i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
-	{
-		ft_bzero(str, size + 1);
-		return (str);
-	}
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (str1[i] == str2[i] && str1[i] < n && str2[i] < n)
+		i++;
+	return (str1[i] - str2[i]);
 }

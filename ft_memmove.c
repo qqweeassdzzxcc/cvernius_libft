@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:45:39 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/12 20:13:18 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/15 19:28:37 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*str;
-	int		i;
+	unsigned char	*to;
+	unsigned char	*from;
+	size_t			i;
 
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
+	to = (unsigned char *)dst;
+	from = (unsigned char *)src;
+	while (from[i] != '\0' && to[i] != '\0' && i < len)
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		to[i] = from[i];
+		i++;
 	}
+	return ((void*)to);
 }
