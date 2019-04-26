@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 21:10:09 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/16 21:18:04 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:45:17 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {

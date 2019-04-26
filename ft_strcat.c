@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 21:46:47 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/15 19:28:45 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:28:49 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {

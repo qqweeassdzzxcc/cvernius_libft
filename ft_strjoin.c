@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:56:02 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:57:25 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

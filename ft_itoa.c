@@ -1,42 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 20:13:18 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/26 12:50:24 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/26 10:07:28 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/26 10:44:57 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+static int	ft_del(int count)
 {
-	unsigned char	*to;
-	unsigned char	*from;
-	size_t			i;
+	int d;
+
+	d = 0;
+	while (count)
+	{
+		d = d * 10;
+	}
+}
+
+static char	*ft_filling(char *s, int n, int count)
+{
+	int i;
 
 	i = 0;
-	to = (unsigned char *)dst;
-	from = (unsigned char *)src;
-	if (dst == src + 1)
+	if (n < 0)
 	{
-		i = len;
-		while (i)
-		{
-			to[i] = from[i];
-			i--;
-		}
+		s[i] = '-';
+		i++;
 	}
+
+}
+
+char	*ft_itoa(int n)
+{
+	int count;
+	char *s;
+
+	count = 0;
+	while (n != 0)
+	{
+		n = n / 10;
+		count++;
+	}
+	if (!(s = malloc((sizeof(char)) * (count + 1))))
+		return (NULL);
 	else
-	{
-		while (i < len)
-		{
-			to[i] = from[i];
-			i++;
-		}
-	}
-	return ((void*)to);
+	return (ft_filling(char *s, int n, int count));
 }

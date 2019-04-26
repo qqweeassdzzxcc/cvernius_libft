@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 19:50:08 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 19:51:37 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/26 10:55:42 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 int		ft_isalnum(int ch)
 {

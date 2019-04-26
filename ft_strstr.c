@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 16:33:20 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/16 19:48:32 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 static char		*ft_return(int flag, char *hstack, int i)
 {

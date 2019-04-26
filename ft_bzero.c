@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 19:37:11 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:35:23 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -21,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 	{
 		str = (char *)s;
 		i = 0;
-		while (i != n)
+		while (i < n)
 		{
 			str[i] = '\0';
 			i++;

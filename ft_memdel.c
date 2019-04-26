@@ -6,17 +6,14 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:35:35 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:43:08 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 11:00:30 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {
-	char **a;
-
-	a = (char**)ap;
-	free(*a);
-	**a = NULL;
+	free(*ap);
+	*ap = NULL;
 }

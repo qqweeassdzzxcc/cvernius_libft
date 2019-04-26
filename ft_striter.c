@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:53:49 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 20:57:27 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/26 10:05:37 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void	ft_striter(char *s, void (*f)(char *))
 {
@@ -19,7 +19,7 @@ void	ft_striter(char *s, void (*f)(char *))
 	i = 0;
 	while (s[i] != '\0')
 	{
-		s[i] = f(&s[i]);
+		s[i] = (char *)f(&s[i]);
 		i++;
 	}
 }

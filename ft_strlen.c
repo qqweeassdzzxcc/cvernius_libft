@@ -6,20 +6,18 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 20:53:59 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/15 19:38:24 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:22:08 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
-	char	*str;
 
 	i = 0;
-	str = (char *)s;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }

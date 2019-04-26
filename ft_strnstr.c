@@ -6,11 +6,11 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:16:59 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/16 20:48:51 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 static int		ft_start_on_i(char *hstack, const char *needle, size_t i,
 							size_t len)
