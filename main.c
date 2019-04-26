@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 //void    *ft_memset(void *b, int c, size_t len);
 //void	ft_bzero(void *s, size_t n);
@@ -58,5 +60,10 @@ int main()
 	printf("s == %s\n", s);
 
 	printf("ft_atoi\nmy = %d\nor = %d\n", ft_atoi("+1234qweq\0"), atoi("+1234qweq\0"));
+	
+	int fd;
+
+	fd = open("test", O_WRONLY);
+	ft_putchar_fd('a', fd);
 	return (0);
 }
