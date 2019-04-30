@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/26 10:07:28 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/26 10:44:57 by cvernius         ###   ########.fr       */
+/*   Created: 2019/04/30 20:57:24 by cvernius          #+#    #+#             */
+/*   Updated: 2019/04/30 20:59:56 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_del(int count)
+static int		ft_del(int count)
 {
 	int d;
 
@@ -25,11 +25,11 @@ static int	ft_del(int count)
 	return (d);
 }
 
-static char	*ft_filling(char *s, int n, int count)
+static char		*ft_filling(char *s, int n, int count)
 {
-	int i;
-	int del;
-	char smbl;
+	int		i;
+	int		del;
+	char	smbl;
 
 	i = 0;
 	if (n < 0)
@@ -52,11 +52,11 @@ static char	*ft_filling(char *s, int n, int count)
 	return (s);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	int count;
-	int tmp;
-	char *s;
+	int		count;
+	int		tmp;
+	char	*s;
 
 	count = 0;
 	tmp = n;
@@ -69,5 +69,5 @@ char	*ft_itoa(int n)
 	if (!(s = malloc((sizeof(char)) * (count + 1))))
 		return (NULL);
 	else
-	return (ft_filling(s, n, count));
+		return (ft_filling(s, n, count));
 }

@@ -35,6 +35,6 @@ int		ft_atoi(const char *str)
 		i++;
 	}
 	if (flag == -1)
-		total = total * (-1);
+		total = total * -1;
 	return (total);
 }
