@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:55:53 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/30 20:24:53 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:12:09 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*p;
+	size_t		i;
+	char		*p;
 
 	i = 0;
 	while (s[i] != '\0' && i != start)

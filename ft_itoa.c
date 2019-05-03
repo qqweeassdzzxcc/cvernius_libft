@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 20:57:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/30 20:59:56 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:11:56 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		ft_del(int count)
 {
-	int d;
+	size_t d;
 
 	d = 1;
 	while (count > 1)
@@ -27,9 +27,9 @@ static int		ft_del(int count)
 
 static char		*ft_filling(char *s, int n, int count)
 {
-	int		i;
-	int		del;
-	char	smbl;
+	size_t		i;
+	size_t		del;
+	char		smbl;
 
 	i = 0;
 	if (n < 0)
@@ -54,9 +54,9 @@ static char		*ft_filling(char *s, int n, int count)
 
 char			*ft_itoa(int n)
 {
-	int		count;
-	int		tmp;
-	char	*s;
+	size_t		count;
+	size_t		tmp;
+	char		*s;
 
 	count = 0;
 	tmp = n;

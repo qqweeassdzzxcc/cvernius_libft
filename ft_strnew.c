@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/30 20:14:20 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:12:54 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 char	*ft_strnew(size_t size)
 {
 	char	*str;
-	int		i;
 
-	i = 0;
 	if (!(str = malloc((sizeof(char)) * (size + 1))))
 		return (NULL);
 	else

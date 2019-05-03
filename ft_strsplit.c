@@ -1,11 +1,21 @@
-//#include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/03 14:27:27 by cvernius          #+#    #+#             */
+/*   Updated: 2019/05/03 14:53:57 by cvernius         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 static int		ft_count_words(char const *s, char c)
 {
-	int i;
-	int count;
+	size_t i;
+	size_t count;
 
 	i = 0;
 	count = 0;
@@ -20,11 +30,10 @@ static int		ft_count_words(char const *s, char c)
 			count++;
 		}
 	}
-	printf("count = %d\n", count);
 	return (count);
 }
 
-static int		ft_count_sym(char const *s, char c, int k)
+static size_t	ft_count_sym(char const *s, char c, int k)
 {
 	while (s[k] != c && s[k] != '\0')
 		k++;
@@ -33,8 +42,8 @@ static int		ft_count_sym(char const *s, char c, int k)
 
 static char		**ft_allocate_mem(char const *s, char c, char **str)
 {
-	int i;
-	int k;
+	size_t i;
+	size_t k;
 
 	i = 0;
 	k = 0;
@@ -44,7 +53,6 @@ static char		**ft_allocate_mem(char const *s, char c, char **str)
 			k++;
 		if (s[k] != c && s[k] != '\0')
 		{
-			printf("k = %d, func = %d\n", k, ft_count_sym(s, c, k));
 			if (!(str[i] = malloc(sizeof(char) *
 									(ft_count_sym(s, c, k) - k + 1))))
 				return (NULL);
@@ -56,11 +64,11 @@ static char		**ft_allocate_mem(char const *s, char c, char **str)
 	return (str);
 }
 
-static char	**ft_get_str(char const *s, char c, char **str)
+static char		**ft_get_str(char const *s, char c, char **str)
 {
-	int i;
-	int j;
-	int k;
+	size_t i;
+	size_t j;
+	size_t k;
 
 	k = 0;
 	i = 0;
@@ -85,10 +93,10 @@ static char	**ft_get_str(char const *s, char c, char **str)
 	return (str);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**str;
-	int		count;
+	size_t	count;
 
 	count = ft_count_words(s, c);
 	if (!(str = malloc((sizeof(char*) * (count + 1)))))
@@ -101,14 +109,4 @@ char	**ft_strsplit(char const *s, char c)
 			str = ft_get_str(s, c, str);
 	}
 	return (str);
-}
-
-int		main(void)
-{
-	char	**ft;
-	int		i;
-
-	i = 0;
-	ft = ft_strsplit("***my*name**", '*');
-	return (0);
 }

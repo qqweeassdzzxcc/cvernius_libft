@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:56:02 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/30 21:09:27 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:46:32 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	char *s;
+	size_t	i;
+	size_t	j;
+	char	*s;
 
 	j = 0;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 22:46:49 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/26 10:52:39 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:14:47 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	sym;
-	int		i;
+	size_t	i;
 
 	sym = (char)c;
 	i = 0;

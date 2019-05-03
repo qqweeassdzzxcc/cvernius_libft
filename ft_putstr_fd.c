@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 19:30:20 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/29 19:30:25 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:40:07 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (s[i] != '\0')

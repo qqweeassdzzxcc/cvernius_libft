@@ -6,15 +6,15 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 21:17:27 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/24 10:26:06 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 15:02:42 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_stpcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (src[i] != '\0')

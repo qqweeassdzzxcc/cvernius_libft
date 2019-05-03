@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 19:52:58 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:13:31 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	*ft_memalloc(size_t size)
 {
 	void	*p;
-	int		i;
 
-	i = 0;
 	if (!(p = malloc(size)))
 		return (NULL);
 	else

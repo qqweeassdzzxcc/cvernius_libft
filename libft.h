@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 16:29:38 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/23 21:02:03 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 15:32:01 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_HEADER_H
-# define FT_HEADER_H
+#ifndef FT_LIBFT_H
+# define FT_LIBFT_H
 
 # include <stdlib.h>
 # include <stddef.h>
@@ -27,7 +27,7 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
-char			*ft_stpcpy(char *dst, const char *src);
+char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
@@ -42,10 +42,10 @@ int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int ch);
 int				ft_isalnum(int ch);
-int				ft_isisascii(int ch);
+int				ft_isascii(int ch);
 int				ft_isprint(int ch);
-int				ft_istoupper(int ch);
-int				ft_istolower(int ch);
+int				ft_toupper(int ch);
+int				ft_tolower(int ch);
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);

@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:16:59 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:24:56 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 {
 	size_t	i;
 	size_t	i_tmp;
-	int		j;
+	size_t	j;
 	int		flag;
 	char	*hstack;
 

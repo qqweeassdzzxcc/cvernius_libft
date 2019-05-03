@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 16:33:20 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:25:38 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static int		ft_start_i(char *hstack, const char *needle, int i)
 
 char			*ft_strstr(const char *haystack, const char *needle)
 {
-	int		i;
-	int		i_tmp;
-	int		j;
+	size_t	i;
+	size_t	i_tmp;
+	size_t	j;
 	int		flag;
 	char	*hstack;
 

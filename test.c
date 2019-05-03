@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strnew.c                                     :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:43:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/24 10:15:15 by cvernius         ###   ########.fr       */
+/*   Created: 2019/05/03 17:20:40 by cvernius          #+#    #+#             */
+/*   Updated: 2019/05/03 18:06:05 by cvernius 	      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-char	*ft_strnew(size_t size)
+int main(void)
 {
-	char	*str;
-	int		i;
+	/*
+	char *s1;
+	char *s2;
+	int i;
+	int j;
 
 	i = 0;
-	if (!(str = malloc((sizeof(char)) * (size + 1))))
-		return (NULL);
-	else
+	j = 0;
+	s1 = malloc(sizeof(char) * 10);
+	s2 = malloc(sizeof(char) * 3);
+	while (i < 6)
 	{
-		ft_bzero(str, size + 1);
-		return (str);
+		s1[i] = i;
+		i++;
 	}
+	s1[i] = '\0';
+	while (j < 2)
+	{
+		s2[j] = j;
+		j++;
+	}
+	s2[j] = '\0';
+	printf("s == %lu\n", strlcat(s1, s2, sizeof(s1)));
+	return (0);
+*/
+	printf("r == %d\n", memcmp("", "test", 4));
+	return (0);
 }

@@ -6,22 +6,22 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 23:01:03 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/26 10:52:51 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 15:24:49 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_srchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
+	size_t	i;
 	char	sym;
 
 	sym = (char)c;
 	i = ft_strlen(s);
 	if (sym == '\0')
 		return ((char *)&s[i]);
-	while (i >= 0 && s[i] != sym)
+	while (s[i] != sym)
 		i--;
 	if (sym == s[i])
 		return ((char *)&s[i]);

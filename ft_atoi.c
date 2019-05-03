@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 21:19:10 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/26 11:01:22 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:10:10 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	int total;
-	int i;
-	int flag;
+	int			total;
+	size_t		i;
+	int			flag;
 
 	total = 0;
 	i = 0;
@@ -35,6 +35,6 @@ int		ft_atoi(const char *str)
 		i++;
 	}
 	if (flag == -1)
-		total = total * -1;
+		total = total * (-1);
 	return (total);
 }

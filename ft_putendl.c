@@ -6,13 +6,13 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 19:29:58 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/29 19:30:00 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:47:24 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
 	ft_putstr((char *)s);
 	ft_putchar('\n');

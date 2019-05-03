@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:53:49 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/30 21:14:55 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:08:03 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	int		i;
-	char	*str;
+	size_t	i;
 
 	i = 0;
-	str = (char*)s;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		str[i] = (char)(f(&s[i]));
+		f(&s[i]);
 		i++;
 	}
 }
