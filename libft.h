@@ -18,6 +18,15 @@
 # include <unistd.h>
 # include <fcntl.h>
 
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+t_list				*ft_lstnew(void const *content, size_t
+content_size);
+
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(const void *dst, const void *src, size_t n);
