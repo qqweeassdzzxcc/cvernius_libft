@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:54:09 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 14:09:21 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/06 19:20:57 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char		*str;
 
 	i = 0;
-	str = (char*)s;
-	while (str[i] != '\0')
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	while (s[i] != '\0')
 	{
-		str[i] = (char)malloc(f(str[i]));
+		str[i] = f(s[i]);
 		i++;
 	}
-	//s[i] = malloc(f[s[i]);
+	str[i] = '\0';
 	return (str);
 }

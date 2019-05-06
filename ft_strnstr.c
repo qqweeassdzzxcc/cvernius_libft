@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:16:59 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 14:24:56 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/06 18:48:22 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int		ft_check_n_h(char *hstack, const char *needle, size_t i, int j)
 		return (0);
 }
 
-static char		*ft_n_return(char *hstack, size_t i, int flag)
+static char		*ft_ret(char *hstack, size_t i, int flag, size_t len)
 {
-	if (flag == 0)
+	if (flag == 0 || len == 0)
 		return (NULL);
 	else
 		return (&hstack[i]);
@@ -61,5 +61,5 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 		flag = (needle[j] == '\0') ? 1 : 0;
 		i = (flag == 0) ? (i + 1) : i;
 	}
-	return (ft_n_return(hstack, ft_start_on_i(hstack, needle, i, len), flag));
+	return (ft_ret(hstack, ft_start_on_i(hstack, needle, i, len), flag, len));
 }

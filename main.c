@@ -58,13 +58,5 @@ int main()
 	printf("s == %s\n", s);
 
 	printf("ft_atoi\nmy = %d\nor = %d\n", ft_atoi("+1234qweq\0"), atoi("+1234qweq\0"));
-	
-
-	t_list *n;
-	n = malloc(sizeof(t_list));
-	n = ft_lstnew(0, 0);
-	printf("n->content_size = %p\n", n->content);
-
-
 	return (0);
 }
