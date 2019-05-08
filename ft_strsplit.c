@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strsplit.c                                   :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 21:37:21 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/08 22:36:32 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/08 22:53:52 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int		ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static int		ft_count_sym(char *s, char c)
+static int		ft_csym(char *s, char c)
 {
 	size_t	i;
 
@@ -43,7 +43,7 @@ static int		ft_count_sym(char *s, char c)
 	return (i);
 }
 
-static void		ft_strdel(char **str, size_t j)
+static void		ft_str_del(char **str, size_t j)
 {
 	while (str)
 	{
@@ -59,6 +59,8 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	j;
 	size_t	count;
 
+	i = 0;
+	j = 0;
 	count = ft_count_words(s, c);
 	if (!(str = malloc((sizeof(char *) * (count + 1)))))
 		return (NULL);
@@ -68,13 +70,13 @@ char			**ft_strsplit(char const *s, char c)
 			i++;
 		if (s[i] == c)
 		{
-			if (!(str[j] = ft_strndup(&s[i], ft_count_sym(&s[i], c))))
+			if (!(str[j] = ft_strndup((char*)&s[i], ft_csym((char*)&s[i], c))))
 			{
-				ft_strdel(str, j);
+				ft_str_del(str, j);
 				return (NULL);
 			}
 			j++;
-			i += ft_count_sym(s, c);
+			i += ft_csym((char*)s, c);
 		}
 	}
 	str[j][0] = '\0';
