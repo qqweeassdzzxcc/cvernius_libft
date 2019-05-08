@@ -13,8 +13,10 @@
 //#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strndup(const char *s, size_t len);
+//char	*ft_strdup(const char *s);
 
 static int		ft_count_words(char const *s, char c)
 {
@@ -84,8 +86,7 @@ char			**ft_strsplit(char const *s, char c)
 			i += ft_csym((char*)&s[i], c);
 		}
 	}
-	str[j] = malloc(sizeof(char) * 1);
-	str[j][0] = '\0';
+	str[j] = strdup("\0");
 	return (str);
 }
 
