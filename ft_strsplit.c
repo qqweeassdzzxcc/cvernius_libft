@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 14:27:27 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 14:53:57 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/08 19:40:06 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,15 @@ static size_t	ft_count_sym(char const *s, char c, int k)
 	return (k);
 }
 
-static char		**ft_allocate_mem(char const *s, char c, char **str)
+static char		**ft_allocate_mem(char const *s, char c, char **str,
+														size_t count)
 {
 	size_t i;
 	size_t k;
 
 	i = 0;
 	k = 0;
-	while (s[k] != '\0')
+	while (s[k] != '\0' || i < count)
 	{
 		while (s[k] == c && s[k] != '\0')
 			k++;
@@ -58,13 +59,14 @@ static char		**ft_allocate_mem(char const *s, char c, char **str)
 				return (NULL);
 			else
 				i++;
-			k++;
+			k = ft_count_sym(s, c, k);
 		}
 	}
+	str[i] = malloc(sizeof(char) * 1);
 	return (str);
 }
 
-static char		**ft_get_str(char const *s, char c, char **str)
+static char		**ft_get_str(char const *s, char c, char **str, size_t count)
 {
 	size_t i;
 	size_t j;
@@ -72,7 +74,7 @@ static char		**ft_get_str(char const *s, char c, char **str)
 
 	k = 0;
 	i = 0;
-	while (s[k] != '\0')
+	while (s[k] != '\0' || i < count)
 	{
 		while (s[k] == c && s[k] != '\0')
 			k++;
@@ -103,10 +105,12 @@ char			**ft_strsplit(char const *s, char c)
 		return (NULL);
 	else
 	{
-		if ((ft_allocate_mem(s, c, str)) == NULL)
+		if ((str = ft_allocate_mem(s, c, str, count)) == NULL)
 			return (NULL);
 		else
-			str = ft_get_str(s, c, str);
+		{
+			str = ft_get_str(s, c, str, count);
+		}
 	}
 	return (str);
 }
