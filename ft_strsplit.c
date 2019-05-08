@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+char	*ft_strndup(const char *s, size_t len);
 
 static int		ft_count_words(char const *s, char c)
 {
@@ -33,12 +37,12 @@ static int		ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static int		ft_csym(char *s, char c)
+static size_t		ft_csym(char *s, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] == c && s[i] != '\0')
+	while (s[i] != c && s[i] != '\0')
 		i++;
 	return (i);
 }
@@ -66,19 +70,29 @@ char			**ft_strsplit(char const *s, char c)
 		return (NULL);
 	while (j < count)
 	{
-		while (s[i] != c && s[i] != '\0')
+		while (s[i] == c && s[i] != '\0')
 			i++;
-		if (s[i] == c)
+		if (s[i] != c)
 		{
 			if (!(str[j] = ft_strndup((char*)&s[i], ft_csym((char*)&s[i], c))))
 			{
 				ft_str_del(str, j);
 				return (NULL);
 			}
+			printf("str[j] = %s\n", str[j]);
 			j++;
-			i += ft_csym((char*)s, c);
+			i += ft_csym((char*)&s[i], c);
 		}
 	}
+	str[j] = malloc(sizeof(char) * 1);
 	str[j][0] = '\0';
 	return (str);
+}
+
+int main(void)
+{
+	char **str;
+
+	str = ft_strsplit("I am Cat", ' ');
+	return (0);
 }
