@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_ft_strsplit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 14:27:27 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/08 19:40:06 by cvernius         ###   ########.fr       */
+/*   Created: 2019/05/08 21:37:21 by cvernius          #+#    #+#             */
+/*   Updated: 2019/05/08 22:36:32 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,84 +33,50 @@ static int		ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static size_t	ft_count_sym(char const *s, char c, int k)
+static int		ft_count_sym(char *s, char c)
 {
-	while (s[k] != c && s[k] != '\0')
-		k++;
-	return (k);
-}
-
-static char		**ft_allocate_mem(char const *s, char c, char **str,
-														size_t count)
-{
-	size_t i;
-	size_t k;
+	size_t	i;
 
 	i = 0;
-	k = 0;
-	while (s[k] != '\0' || i < count)
-	{
-		while (s[k] == c && s[k] != '\0')
-			k++;
-		if (s[k] != c && s[k] != '\0')
-		{
-			if (!(str[i] = malloc(sizeof(char) *
-									(ft_count_sym(s, c, k) - k + 1))))
-				return (NULL);
-			else
-				i++;
-			k = ft_count_sym(s, c, k);
-		}
-	}
-	str[i] = malloc(sizeof(char) * 1);
-	return (str);
+	while (s[i] == c && s[i] != '\0')
+		i++;
+	return (i);
 }
 
-static char		**ft_get_str(char const *s, char c, char **str, size_t count)
+static void		ft_strdel(char **str, size_t j)
 {
-	size_t i;
-	size_t j;
-	size_t k;
-
-	k = 0;
-	i = 0;
-	while (s[k] != '\0' || i < count)
+	while (str)
 	{
-		while (s[k] == c && s[k] != '\0')
-			k++;
-		if (s[k] != c && s[k] != '\0')
-		{
-			j = 0;
-			while (k != ft_count_sym(s, c, k))
-			{
-				str[i][j] = s[k];
-				k++;
-				j++;
-			}
-			str[i][j] = '\0';
-			i++;
-		}
+		free(str[j]);
+		j--;
 	}
-	str[i][0] = '\0';
-	return (str);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
 	char	**str;
+	size_t	i;
+	size_t	j;
 	size_t	count;
 
 	count = ft_count_words(s, c);
-	if (!(str = malloc((sizeof(char*) * (count + 1)))))
+	if (!(str = malloc((sizeof(char *) * (count + 1)))))
 		return (NULL);
-	else
+	while (j < count)
 	{
-		if ((str = ft_allocate_mem(s, c, str, count)) == NULL)
-			return (NULL);
-		else
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (s[i] == c)
 		{
-			str = ft_get_str(s, c, str, count);
+			if (!(str[j] = ft_strndup(&s[i], ft_count_sym(&s[i], c))))
+			{
+				ft_strdel(str, j);
+				return (NULL);
+			}
+			j++;
+			i += ft_count_sym(s, c);
 		}
 	}
+	str[j][0] = '\0';
 	return (str);
 }
