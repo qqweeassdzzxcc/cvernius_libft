@@ -6,19 +6,13 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 21:37:21 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/08 22:53:52 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/09 16:04:48 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strndup(const char *s, size_t len);
-//char	*ft_strdup(const char *s);
-
-static int		ft_count_words(char const *s, char c)
+static size_t		ft_count_words(char const *s, char c)
 {
 	size_t i;
 	size_t count;
@@ -49,7 +43,7 @@ static size_t		ft_csym(char *s, char c)
 	return (i);
 }
 
-static void		ft_str_del(char **str, size_t j)
+static void			ft_str_del(char **str, size_t j)
 {
 	while (str)
 	{
@@ -58,19 +52,17 @@ static void		ft_str_del(char **str, size_t j)
 	}
 }
 
-char			**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	char	**str;
 	size_t	i;
 	size_t	j;
-	size_t	count;
 
 	i = 0;
 	j = 0;
-	count = ft_count_words(s, c);
-	if (!(str = malloc((sizeof(char *) * (count + 1)))))
+	if (!(str = malloc((sizeof(char *) * (ft_count_words(s, c) + 1)))))
 		return (NULL);
-	while (j < count)
+	while (j < ft_count_words(s, c))
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
@@ -81,19 +73,10 @@ char			**ft_strsplit(char const *s, char c)
 				ft_str_del(str, j);
 				return (NULL);
 			}
-			printf("str[j] = %s\n", str[j]);
 			j++;
 			i += ft_csym((char*)&s[i], c);
 		}
 	}
-	str[j] = strdup("\0");
+	str[j] = NULL;
 	return (str);
-}
-
-int main(void)
-{
-	char **str;
-
-	str = ft_strsplit("I am Cat", ' ');
-	return (0);
 }
