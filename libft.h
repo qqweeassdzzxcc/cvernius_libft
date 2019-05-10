@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 16:29:38 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/06 16:06:31 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/09 18:13:44 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <limits.h>
 
 typedef struct		s_list
 {
@@ -82,5 +83,6 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+char				*ft_strndup(const char *str, size_t len);
 
 #endif

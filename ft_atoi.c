@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 21:19:10 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 14:10:10 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/10 15:45:45 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int		ft_atoi(const char *str)
 			flag = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0' && total <= INT_MAX
+														&& total >= INT_MIN)
 	{
 		total = total * 10 + (str[i] - 48);
 		i++;
 	}
-	if (flag == -1)
-		total = total * (-1);
+	total = (flag == -1) ? (total * (-1)) : total;
 	return (total);
 }

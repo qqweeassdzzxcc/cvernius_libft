@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:56:32 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 14:49:49 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/07 22:44:13 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,21 @@ char	*ft_strtrim(char const *s)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
 	char	*str;
 
 	i = 0;
-	k = 0;
-	j = ft_strlen((char*)s);
+	j = ft_strlen((char*)s) - 1;
 	while (s[i] != '\0' && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		i++;
-	while (s[j] >= 0 && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+	while (j >= i && (s[j] == ' ' || s[j] == '\n' || s[j] == '\t'))
 		j--;
-	if (!(str = malloc(sizeof(char) * (j - i + 2))))
-		return (NULL);
+	if (i == 0 && j == ft_strlen((char*)s) - 1)
+		str = ft_strdup((char*)s);
 	else
 	{
-		while (i <= j)
-		{
-			str[k] = s[i];
-			k++;
-			i++;
-		}
-		str[k] = '\0';
-		return (str);
+		if (!(str = malloc(sizeof(char) * (j - i + 2))))
+			return (NULL);
+		str = ft_strsub((char*)s, i, j - i + 1);
 	}
+	return (str);
 }

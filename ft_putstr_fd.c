@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 19:30:20 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 14:40:07 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/10 15:38:57 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_putstr_fd(char const *s, int fd)
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	ft_putchar_fd('\0', fd);
 }

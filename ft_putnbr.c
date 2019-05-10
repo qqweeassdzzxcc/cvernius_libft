@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 19:30:13 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/29 19:30:16 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/10 15:31:59 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_del(int count)
 	return (d);
 }
 
-void	ft_putnbr(int n)
+void		ft_putnbr(int n)
 {
 	int del;
 	int count_dit;
