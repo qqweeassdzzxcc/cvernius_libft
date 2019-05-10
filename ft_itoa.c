@@ -21,6 +21,7 @@
 char			*ft_itoa(int n)
 {
 	size_t		count;
+	size_t		i;
 	int			tmp;
 	char		*s;
 
@@ -34,31 +35,34 @@ char			*ft_itoa(int n)
 		tmp = tmp / 10;
 		count++;
 	}
-	printf("q count = %zu\n", count);
-	count = (n <= 0 || (n < 10 && n >= 0)) ? (count + 1) : count;
+	printf("1 count = %zu\n", count);
+	count = (n <= 0 || (n >= 0 && n <= 9)) ? (count + 1) : count;
 	if (!(s = malloc((sizeof(char)) * (count + 1))))
 		return (NULL);
-	printf("t count = %zu\n", count);
+	printf("2 count = %zu\n", count);
 	s[count] = '\0';
 	count--;
-	//printf(" jcount = %zu\n", count);
+	//s[count] = (count == 0) ? n : ' ';
+	//printf("3 count = %zu s[count] = %s\n", count, s);
 	s[0] = (n < 0) ? '-' : ' ';
-	while (count)
+	printf("n = %d, s[0] = %c\n", n, s[0]);
+	i = (n < 0) ? count : count + 1;
+	while (i)
 	{
 		s[count] = (n < 0) ? ((n % 10) * (-1) + '0') : (n % 10 + '0');
-		printf("s = %c\n", s[count]);
+		printf("s = %c, count = %ld\n", s[count], count);
 		n = n / 10;
 		count--;
+		i--;
 	}
 	printf("s = %s\n", s);
 	return (s);
 }
 
-
 int		main(void)
 {
 	char *s;
 
-	s = ft_itoa(0);
+	s = ft_itoa(10000);
 	return (0);
 }
