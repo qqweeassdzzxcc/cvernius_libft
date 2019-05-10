@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 15:10:27 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/10 16:45:29 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/10 18:07:06 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,11 @@
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	t_list *tlst;
-	t_list *tmp;
 
 	tlst = lst;
-	tmp = lst;
-	//while (tlst->next != NULL)
-	while (tmp->next)
+	while (tlst)
 	{
-		tlst = tmp;
 		f(tlst);
-		tmp = tmp->next;
+		tlst = tlst->next;
 	}
 }
