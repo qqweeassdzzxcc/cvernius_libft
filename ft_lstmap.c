@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 15:12:34 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/10 20:46:06 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/11 16:40:31 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		if (!(newlst = malloc(sizeof(t_list))))
 			return ((t_list*)ft_del_lstcpy(new_head));
 		newlst = f(tlst);
-		tlst = tlst->next;
 		tmp->next = newlst;
 		tmp = newlst;
+		tlst = tlst->next;
 	}
 	return(newlst);
 }

@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 19:48:51 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/26 10:55:42 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/11 21:28:09 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_tolower(int ch)
 {
-	return (((char)ch >= 'A' && (char)ch <= 'Z') ? ((char)ch + 32) : (char)ch);
+	return ((ch >= 'A' && ch <= 'Z') ? (ch + 32) : ch);
 }

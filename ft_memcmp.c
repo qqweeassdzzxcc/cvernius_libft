@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 20:44:57 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 20:38:13 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/11 19:24:44 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	while (str1[i] == str2[i] && i < n && str1[i] != '\0' && str2[i] != '\0')
+
+	while (i < n)
+	{
+		if (str1[i] != str2[i])
+			return ((int)(str1[i] - str2[i]));
 		i++;
-	if (i == n)
-		i--;
-	return (str1[i] - str2[i]);
+	}
+	return (0);
 }

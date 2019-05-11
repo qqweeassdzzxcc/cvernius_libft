@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 19:50:08 by cvernius          #+#    #+#             */
-/*   Updated: 2019/04/26 10:55:42 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/11 21:30:07 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isalnum(int ch)
 {
-	return ((((char)ch >= 'a' && (char)ch <= 'z') ||
-						((char)ch >= 'A' && (char)ch <= 'Z') ||
-								((char)ch >= '0' && (char)ch <= '9')) ? 1 : 0);
+	return (((ch >= 'a' && ch <= 'z') ||
+						(ch >= 'A' && ch <= 'Z') ||
+								(ch >= '0' && ch <= '9')) ? 1 : 0);
 }

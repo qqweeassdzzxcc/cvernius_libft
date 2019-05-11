@@ -6,15 +6,23 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:16:59 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/06 18:48:22 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/11 23:01:42 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/*
+#include <stdio.h>
+#include <string.h>
+
+
+char	*ft_strndup(const char *str, size_t len);
+char			*ft_strstr(const char *haystack, const char *needle);
+
 
 static int		ft_start_on_i(char *hstack, const char *needle, size_t i,
 							size_t len)
-{
+{s
 	while (hstack[i] != needle[0] && hstack[i] != '\0' && i < len)
 		i++;
 	return (i);
@@ -63,3 +71,30 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 	}
 	return (ft_ret(hstack, ft_start_on_i(hstack, needle, i, len), flag, len));
 }
+*/
+
+char		*ft_strnstr(const char *haystack, const char *needle,
+													size_t len)
+{
+	//char	*s;
+	//char	*tmp;
+
+	if (len == 0)
+		return (NULL);
+	if (needle[0] == '\0')
+		return ((char*)haystack);
+	//tmp = ft_strndup(haystack, len);
+	//s = ft_strstr((const char *)tmp, needle);
+	return (ft_strstr((const char *)ft_strndup(haystack, len), needle));
+}
+/*
+int		main(void)
+{
+	char *s;
+	char *ss;
+
+	s = strnstr("see FF your FF return FF now FF", "FF", 32);
+	ss = ft_strnstr("see FF your FF return FF now FF", "FF", 32);
+	printf("my =%s\norig =%s\n", ss, s);
+}
+*/
