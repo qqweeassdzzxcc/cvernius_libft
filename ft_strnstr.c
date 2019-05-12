@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:16:59 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/11 23:01:42 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/12 18:45:34 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 char	*ft_strndup(const char *str, size_t len);
 char			*ft_strstr(const char *haystack, const char *needle);
+size_t		ft_strlen(const char *s);
 
 
 static int		ft_start_on_i(char *hstack, const char *needle, size_t i,
@@ -77,24 +78,39 @@ char		*ft_strnstr(const char *haystack, const char *needle,
 													size_t len)
 {
 	//char	*s;
-	//char	*tmp;
+	char	*tmp;
 
-	if (len == 0)
+	if (haystack[0] == '\0' && needle[0] != '\0')
 		return (NULL);
-	if (needle[0] == '\0')
+	if (needle[0] == '\0' && haystack[0] != '\0')
 		return ((char*)haystack);
-	//tmp = ft_strndup(haystack, len);
+	tmp = ft_strndup(haystack, len);
 	//s = ft_strstr((const char *)tmp, needle);
-	return (ft_strstr((const char *)ft_strndup(haystack, len), needle));
+	return (ft_strstr((const char *)tmp, needle));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 int		main(void)
 {
 	char *s;
 	char *ss;
+	size_t max = ft_strlen("see FF your FF return FF now FF");
 
-	s = strnstr("see FF your FF return FF now FF", "FF", 32);
-	ss = ft_strnstr("see FF your FF return FF now FF", "FF", 32);
-	printf("my =%s\norig =%s\n", ss, s);
+	s = strnstr("see FF your FF return FF now FF", "FF", max);
+	ss = ft_strnstr("see FF your FF return FF now FF", "FF", max);
+	printf("my =%c\norig =%c\n", *ss, *s);
+	return (0);
 }
 */

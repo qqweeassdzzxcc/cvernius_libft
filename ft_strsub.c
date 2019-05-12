@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 20:55:53 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/07 22:35:37 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/12 19:32:35 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,18 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	j = 0;
 	if (!(p = malloc((sizeof(char) * (len + 1)))))
 		return (NULL);
-	while (s[i] != '\0' && i != start)
-		i++;
-	while (j < len)
+	if (s)
 	{
-		p[j] = s[i];
-		i++;
-		j++;
+		while (s[i] != '\0' && i != start)
+			i++;
+		while (j < len)
+		{
+			p[j] = s[i];
+			i++;
+			j++;
+		}
+		p[j] = '\0';
+		return (p);
 	}
-	p[j] = '\0';
-	return (p);
+	return (NULL);
 }
