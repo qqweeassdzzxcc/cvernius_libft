@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 19:29:58 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 14:47:24 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/13 15:53:56 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putendl(char const *s)
 {
-	ft_putstr((char *)s);
-	ft_putchar('\n');
+	if (s)
+	{
+		ft_putstr((char *)s);
+		ft_putchar('\n');
+	}
 }

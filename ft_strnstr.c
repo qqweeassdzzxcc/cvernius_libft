@@ -6,11 +6,12 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:16:59 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/12 18:45:34 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/13 17:48:29 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*
 #include <stdio.h>
 #include <string.h>
@@ -20,10 +21,11 @@ char	*ft_strndup(const char *str, size_t len);
 char			*ft_strstr(const char *haystack, const char *needle);
 size_t		ft_strlen(const char *s);
 
+*/
 
 static int		ft_start_on_i(char *hstack, const char *needle, size_t i,
 							size_t len)
-{s
+{
 	while (hstack[i] != needle[0] && hstack[i] != '\0' && i < len)
 		i++;
 	return (i);
@@ -57,6 +59,8 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 	hstack = (char *)haystack;
 	if (needle[0] == '\0')
 		return (hstack);
+	if (haystack[0] == '\0')
+		return (NULL);
 	i = 0;
 	while (hstack[i] != '\0' && flag != 1 && i < len)
 	{
@@ -72,8 +76,10 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 	}
 	return (ft_ret(hstack, ft_start_on_i(hstack, needle, i, len), flag, len));
 }
-*/
 
+
+
+/*
 char		*ft_strnstr(const char *haystack, const char *needle,
 													size_t len)
 {
@@ -88,15 +94,7 @@ char		*ft_strnstr(const char *haystack, const char *needle,
 	//s = ft_strstr((const char *)tmp, needle);
 	return (ft_strstr((const char *)tmp, needle));
 }
-
-
-
-
-
-
-
-
-
+*/
 
 
 
