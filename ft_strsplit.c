@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 21:37:21 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/13 15:50:46 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/13 19:35:09 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char				**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!(str = malloc((sizeof(char *) * (ft_count_words(s, c) + 1)))))
+	if (!s || !(str = malloc((sizeof(char *) * (ft_count_words(s, c) + 1)))))
 		return (NULL);
 	while (j < ft_count_words(s, c))
 	{

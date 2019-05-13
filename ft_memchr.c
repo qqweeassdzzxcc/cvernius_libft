@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 20:32:35 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/03 18:43:32 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/13 19:50:45 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	sym = (unsigned char)c;
 	str = (unsigned char *)s;
-	while (i < n - 1 && str[i] != sym)
+	while (n--)
+	{
+		if (str[i] == sym)
+			return (&str[i]);
 		i++;
-	if (str[i] != sym)
-		return (NULL);
-	else
-		return (&str[i]);
+	}
+	return (NULL);
 }

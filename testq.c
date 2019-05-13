@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   testq.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/06 15:11:41 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/13 19:26:52 by cvernius         ###   ########.fr       */
+/*   Created: 2019/05/13 18:06:03 by cvernius          #+#    #+#             */
+/*   Updated: 2019/05/13 19:42:31 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <limits.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
-{
-	t_list	**lst;
-	t_list	*tmp;
+// int ft_atoi(const char *str);
 
-	if (*alst)
-	{
-		lst = alst;
-		while (*lst)
-		{
-			del((*lst)->content, (*lst)->content_size);
-			tmp = (*lst)->next;
-			free(*lst);
-			(*lst) = tmp;
-		}
-		free(*alst);
-		*alst = NULL;
-	}
-}
+// int main(void)
+// {
+// 99999999999999999999999999
+// 9999999999999999999
+
+// 	printf("%d\n%d\n", atoi("9999999999999999999"), ft_atoi("9999999999999999999"));
+// 	return (0);
+// }

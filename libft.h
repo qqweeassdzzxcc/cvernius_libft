@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 16:29:38 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/09 18:13:44 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/13 19:44:01 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 char				*ft_strndup(const char *str, size_t len);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
 
 #endif
