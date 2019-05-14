@@ -6,18 +6,20 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 19:49:27 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/14 21:44:13 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/15 00:44:16 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(const void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t			i;
 	unsigned char	*source;
 	unsigned char	*dest;
 
+	// if (!dst && !src)
+	// 	return (NULL);
 	i = 0;
 	dest = (unsigned char*)dst;
 	source = (unsigned char*)src;

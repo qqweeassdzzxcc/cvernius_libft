@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_isabs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 20:55:53 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/14 22:52:29 by cvernius         ###   ########.fr       */
+/*   Created: 2019/05/14 23:31:37 by cvernius          #+#    #+#             */
+/*   Updated: 2019/05/14 23:33:00 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int		ft_isabs(int ch)
 {
-	size_t		i;
-	size_t		j;
-	char		*p;
-
-	i = 0;
-	j = 0;
-	if (len + 1 == 0 || !(p = malloc((sizeof(char) * (len + 1)))))
-		return (NULL);
-	if (s)
-	{
-		while (s[i] != '\0' && i != start)
-			i++;
-		while (j < len)
-		{
-			p[j] = s[i];
-			i++;
-			j++;
-		}
-		p[j] = '\0';
-		return (p);
-	}
-	return (NULL);
+	return ((ch < 0) ? (ch * (-1)) : ch);
 }

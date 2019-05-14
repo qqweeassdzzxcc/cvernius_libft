@@ -1,45 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 20:13:18 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/15 00:14:43 by cvernius         ###   ########.fr       */
+/*   Created: 2019/05/14 23:10:58 by cvernius          #+#    #+#             */
+/*   Updated: 2019/05/14 23:11:31 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t		ft_count_words(char const *s, char c)
 {
-	unsigned char	*dest;
-	unsigned char	*source;
-	size_t			i;
+	size_t i;
+	size_t count;
 
-	if (dst == src)
-		return (dst);
 	i = 0;
-	dest = (unsigned char *)dst;
-	source = (unsigned char *)src;
-	if (dst > src)
+	count = 0;
+	while (s[i] != '\0')
 	{
-		i = len;
-		while (i)
-		{
-			dest[i - 1] = source[i - 1];
-			i--;
-		}
-	}
-	else
-	{
-		while (i < len)
-		{
-			dest[i] = source[i];
+		while (s[i] == c && s[i] != '\0')
 			i++;
+		if (s[i] != c && s[i] != '\0')
+		{
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			count++;
 		}
 	}
-	return (dst);
-	//return ((!dst && !src) ? NULL : (void*)dest);
+	return (count);
 }
