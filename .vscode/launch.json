@@ -8,7 +8,7 @@
 			"name": "(lldb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/ft_strlcat",
+			"program": "${workspaceFolder}/ft_strstr",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",

@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 15:12:34 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/13 19:33:31 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/14 22:27:04 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static t_list	*ft_del_lstcpy(t_list *new_head)
 	return (NULL);
 }
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*tlst;
 	t_list	*newlst;

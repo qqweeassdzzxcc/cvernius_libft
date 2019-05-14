@@ -6,27 +6,26 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 16:33:20 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/13 22:58:33 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/14 22:25:37 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <string.h>
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char			*ft_strstr(const char *haystack, const char *needle)
 {
-	return (ft_strnstr(haystack, needle, ft_strlen(haystack)));
+	size_t	i;
+	size_t	n;
+
+	i = 0;
+	n = ft_strlen(needle);
+	if (*needle == '\0')
+		return ((char*)haystack);
+	while (haystack[i] != '\0')
+	{
+		if (!(ft_memcmp(haystack + i, needle, n)))
+			return ((char*)haystack + i);
+		i++;
+	}
+	return (NULL);
 }
-// int		main()
-// {
-// 	char	*s1 = "abababcabcabcd";
-// 	char	*s2 = "abcd";
-// 	//printf("ft_ststr: %s\n", ft_strstr(str, "les"));
-// 	//printf("  strstr: %s\n", strstr(str, "les"));
-// 	if (strstr(s1, s2) != ft_strstr(s1, s2))
-// 		printf("Error\n");
-// 	else
-// 		printf("It works");
-// 	return (0);
-// }

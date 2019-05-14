@@ -6,13 +6,13 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 20:57:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/10 15:25:44 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/14 20:09:54 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_count_digit(int tmp)
+static size_t	ft_count_digit(int tmp)
 {
 	size_t	count;
 

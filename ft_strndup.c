@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 21:01:10 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/08 22:48:29 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/14 22:19:20 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strndup(const char *str, size_t len)
 	char	*s;
 	size_t	i;
 
-	i = 0;
-	if (!(s = malloc(sizeof(char) * (len + 1))))
+	if (len + 1 == 0 || !(s = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
+	i = 0;
 	while (i < len)
 	{
 		s[i] = str[i];
