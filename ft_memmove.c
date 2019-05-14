@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 20:13:18 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/15 00:14:43 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/15 02:36:47 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (dst > src)
 	{
 		i = len;
-		while (i)
-		{
-			dest[i - 1] = source[i - 1];
-			i--;
-		}
+		while (i--)
+			dest[i] = source[i];
 	}
 	else
 	{
@@ -41,5 +38,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	return (dst);
-	//return ((!dst && !src) ? NULL : (void*)dest);
 }

@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 20:57:24 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/14 20:09:54 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/15 02:23:47 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ char			*ft_itoa(int n)
 	char		*s;
 
 	count = 0;
-	n = (n < INT_MIN) ? INT_MIN : n;
-	n = (n > INT_MAX) ? INT_MAX : n;
 	count = ft_count_digit(n);
 	count = (n <= 0) ? (count + 1) : count;
 	if (!(s = malloc((sizeof(char)) * (count + 1))))

@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 15:11:41 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/14 21:59:29 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/15 02:33:47 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	t_list	**lst;
 	t_list	*tmp;
 
-	if (*alst && del)
+	if (alst && *alst && del)
 	{
 		lst = alst;
 		while (*lst)

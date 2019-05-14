@@ -6,7 +6,7 @@
 /*   By: cvernius <cvernius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 19:49:27 by cvernius          #+#    #+#             */
-/*   Updated: 2019/05/15 00:44:16 by cvernius         ###   ########.fr       */
+/*   Updated: 2019/05/15 02:17:08 by cvernius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*source;
 	unsigned char	*dest;
 
-	// if (!dst && !src)
-	// 	return (NULL);
 	i = 0;
 	dest = (unsigned char*)dst;
 	source = (unsigned char*)src;
